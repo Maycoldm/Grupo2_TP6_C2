@@ -91,7 +91,7 @@ public class Ventana extends javax.swing.JFrame {
         });
 
         jButtonAgregar.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo2_tp6/Carrito compras.png"))); // NOI18N
+        jButtonAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo2_tp6_c2/Carrito compras.png"))); // NOI18N
         jButtonAgregar.setText("Agregar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -131,7 +131,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLbPrecio))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTable.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
