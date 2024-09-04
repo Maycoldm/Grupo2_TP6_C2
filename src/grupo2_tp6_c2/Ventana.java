@@ -67,7 +67,7 @@ public class Ventana extends javax.swing.JFrame {
 
         jLbTitulo.setBackground(new java.awt.Color(255, 255, 255));
         jLbTitulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLbTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo2_tp6/box.png"))); // NOI18N
+        jLbTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo2_tp6_c2/box.png"))); // NOI18N
         jLbTitulo.setText("Gestión de Productos");
 
         javax.swing.GroupLayout jPtituloLayout = new javax.swing.GroupLayout(jPtitulo);
