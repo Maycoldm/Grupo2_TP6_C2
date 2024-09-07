@@ -34,6 +34,11 @@ public class Principal extends javax.swing.JFrame {
         jbEj2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
         jbEj2.setForeground(new java.awt.Color(153, 0, 255));
         jbEj2.setText("Ejercicio 2");
+        jbEj2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEj2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -82,6 +87,11 @@ public class Principal extends javax.swing.JFrame {
         Ventana v = new Ventana();
         v.setVisible(true);
     }//GEN-LAST:event_jbEj1ActionPerformed
+
+    private void jbEj2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEj2ActionPerformed
+        busquedaPorNombre busqueda2 = new busquedaPorNombre();
+        busqueda2.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jbEj2ActionPerformed
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
