@@ -3,12 +3,12 @@ package grupo2_tp6_c2;
 
 import java.util.Objects;
 
-public class Producto {
+public class Producto_Ej1 {
     private String Nombre;
     private String Categoria;
     private long Precio;
 
-    public Producto(String Nombre, String Categoria, long Precio) {
+    public Producto_Ej1(String Nombre, String Categoria, long Precio) {
         this.Nombre = Nombre;
         this.Categoria = Categoria;
         this.Precio = Precio;
@@ -63,7 +63,7 @@ public class Producto {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Producto other = (Producto) obj;
+        final Producto_Ej1 other = (Producto_Ej1) obj;
         if (this.Precio != other.Precio) {
             return false;
         }

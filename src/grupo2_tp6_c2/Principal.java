@@ -20,6 +20,8 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Principal");
 
+        jPanel1.setBackground(new java.awt.Color(102, 0, 102));
+
         jbEj1.setBackground(new java.awt.Color(255, 255, 255));
         jbEj1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
         jbEj1.setForeground(new java.awt.Color(153, 51, 255));
@@ -42,6 +44,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 204, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Elija el ejercicio que desea ver: ");
 
@@ -90,7 +93,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jbEj2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEj2ActionPerformed
         busquedaPorNombre busqueda2 = new busquedaPorNombre();
-        busqueda2.setVisible(true);// TODO add your handling code here:
+        busqueda2.setVisible(true);
     }//GEN-LAST:event_jbEj2ActionPerformed
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
