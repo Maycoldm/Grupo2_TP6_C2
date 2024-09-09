@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Ventana extends javax.swing.JFrame {
-    HashSet<Producto> lista;
+    HashSet<Producto_Ej1> lista;
     private DefaultTableModel modelo = new DefaultTableModel() {
         public boolean isCellEditable(int fila, int col) {
             return false;
@@ -16,11 +16,11 @@ public class Ventana extends javax.swing.JFrame {
     public Ventana() {
         lista = new HashSet<>();
         
-        Producto p1 = new Producto("Harina","Comestible",(long)699.9);
-        Producto p2 = new Producto("Lavandina","Limpieza",(long)1150.0);
-        Producto p3 = new Producto("Pan","Comestible",(long)1500.0);
-        Producto p4 = new Producto("Medias","Ropa",(long)2499.9);
-        Producto p5 = new Producto("Desodorante","Perfumería",(long)14599.9);
+        Producto_Ej1 p1 = new Producto_Ej1("Harina","Comestible",(long)699.9);
+        Producto_Ej1 p2 = new Producto_Ej1("Lavandina","Limpieza",(long)1150.0);
+        Producto_Ej1 p3 = new Producto_Ej1("Pan","Comestible",(long)1500.0);
+        Producto_Ej1 p4 = new Producto_Ej1("Medias","Ropa",(long)2499.9);
+        Producto_Ej1 p5 = new Producto_Ej1("Desodorante","Perfumería",(long)14599.9);
         
         lista.add(p1);
         lista.add(p2);
@@ -254,7 +254,7 @@ public class Ventana extends javax.swing.JFrame {
             if (!nombre.equalsIgnoreCase("")) {
                 String cate = (String)jComboCat.getSelectedItem();
                 long precio = Long.parseLong(jTextPrecio.getText());
-                Producto p = new Producto(nombre,cate,precio);
+                Producto_Ej1 p = new Producto_Ej1(nombre,cate,precio);
                 if (lista.add(p)) {
                     lista.add(p);
                     agregarFila(p);
@@ -282,7 +282,7 @@ public class Ventana extends javax.swing.JFrame {
         jTable.setModel(modelo);
     }
     
-    private void agregarFila(Producto p) {
+    private void agregarFila(Producto_Ej1 p) {
         modelo.addRow(new Object[] {
             p.getNombre(),
             p.getCategoria(),
@@ -294,7 +294,7 @@ public class Ventana extends javax.swing.JFrame {
         
         String pselected = (String)jComboCat.getSelectedItem();
         
-        for (Producto p: lista) {
+        for (Producto_Ej1 p: lista) {
             agregarFila(p);
         }
     }

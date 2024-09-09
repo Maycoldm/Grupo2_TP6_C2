@@ -9,21 +9,21 @@ import javax.swing.table.DefaultTableModel;
 
 public class busquedaPorNombre extends javax.swing.JFrame {
 
-    HashSet<Producto> lista;
+    HashSet<Producto_Ej1> lista;
     private DefaultTableModel modelo = new DefaultTableModel() {
         public boolean isCellEditable(int fila, int col) {
-            return false;
+            return false; //Genera que todas las celdas no sean editables.
         }
     };
     
     public busquedaPorNombre() {
         lista = new HashSet<>();
         
-        Producto p1 = new Producto("Harina","Comestible",(long)699.9);
-        Producto p2 = new Producto("Lavandina","Limpieza",(long)1150.0);
-        Producto p3 = new Producto("Pan","Comestible",(long)1500.0);
-        Producto p4 = new Producto("Medias","Ropa",(long)2499.9);
-        Producto p5 = new Producto("Desodorante","Perfumería",(long)14599.9);
+        Producto_Ej1 p1 = new Producto_Ej1("Harina","Comestible",(long)699.9);
+        Producto_Ej1 p2 = new Producto_Ej1("Lavandina","Limpieza",(long)1150.0);
+        Producto_Ej1 p3 = new Producto_Ej1("Pan","Comestible",(long)1500.0);
+        Producto_Ej1 p4 = new Producto_Ej1("Medias","Ropa",(long)2499.9);
+        Producto_Ej1 p5 = new Producto_Ej1("Desodorante","Perfumería",(long)14599.9);
         
         lista.add(p1);
         lista.add(p2);
@@ -57,6 +57,12 @@ public class busquedaPorNombre extends javax.swing.JFrame {
 
         jLabel3.setText("Ingrese descripcion:");
 
+        jtBuscarProduc.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtBuscarProducKeyReleased(evt);
+            }
+        });
+
         jtProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -79,25 +85,26 @@ public class busquedaPorNombre extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jtBuscarProduc, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 88, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jtBuscarProduc, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,13 +122,17 @@ public class busquedaPorNombre extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jtBuscarProduc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jtBuscarProducKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBuscarProducKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtBuscarProducKeyReleased
 
     /**
      * @param args the command line arguments
